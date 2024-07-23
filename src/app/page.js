@@ -1,113 +1,207 @@
+"use client";
+import Head from "next/head";
+import { AiFillLinkedin } from "react-icons/ai";
+import { MdOutgoingMail } from "react-icons/md";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { useState } from "react";
 import Image from "next/image";
+import code from "/public/code.png";
+import design from "/public/design.png";
+import consulting from "/public/consulting.png";
+import Bookstore from "/public/Bookstore.png";
+import FinanceManagement from "/public/FinanceManagement.png";
+import ImageGen from "/public/ImageGen.png";
+import lydiaAvatar from "/public/lydiaAvatar.png";
+import RecipeWebsite from "/public/RecipeWebsite.png";
+import Contact from "./contact";
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className={darkMode ? "dark" : ""}>
+      <Head>
+        <title>Lydia Benzemrane's Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Lydia Benzemrane, a Master's student in Intelligent Computer Systems."
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="bg-white dark:bg-gray-900 px-10 md:px-20 lg:px-40">
+        <section className="min-h-screen">
+          <nav className="py-6 mb-12 flex justify-between dark:text-white">
+            <h1 className="text-xl">{} </h1>
+            <ul className="flex items-center">
+              <li>
+                {darkMode ? (
+                  <BsFillSunFill
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="cursor-pointer text-2xl text-yellow-500" // Light mode icon color
+                  />
+                ) : (
+                  <BsFillMoonStarsFill
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="cursor-pointer text-2xl text-gray-800" // Dark mode icon color
+                  />
+                )}
+              </li>
+              <li>
+                <a
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+                  href="/resume.pdf"
+                >
+                  Resume
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div className="text-center p-10 py-2">
+            <h2 className="text-5xl py-5 text-teal-600 dark:text-teal-400 md:text-6xl">
+              Lydia Benzemrane
+            </h2>
+            <h3 className="text-2xl py-2 text-gray-800 dark:text-gray-200 md:text-3xl">
+              Full Stack Developer and UI/UX Designer
+            </h3>
+            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
+              Hi there! I’m Lydia, a passionate Master's student in AI and Data
+              Science with a love for software engineering and UI/UX design. I
+              enjoy crafting intuitive and engaging digital experiences and am
+              fluent in English, French, and Arabic.
+            </p>
+            <div className="text-5xl flex justify-center gap-16 py-2 text-gray-600 dark:text-gray-400">
+              <a href="https://www.linkedin.com/in/lydia-benzemrane-594183219/">
+                <AiFillLinkedin />
+              </a>
+            </div>
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt- md:h-96 md:w-96">
+              <Image src={lydiaAvatar} layout="fill" objectFit="cover" />
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400">
+              Skills
+            </h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Proficiency in AI algorithms and models development, machine
+              learning model development, data cleaning and preprocessing,
+              learning ability, teamwork, agile methodologies, and more.
+            </p>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Technologies: Deep learning, Python, Java, SQL, JavaScript
+            </p>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400">
+              Education
+            </h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Master's in Intelligent Computer Systems (2023 - present), Houari
+              Boumediene University of Science and Technology
+            </p>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Bachelor's Degree in Computer Systems and Software Engineering
+              (2020 - 2023), Houari Boumediene University of Science and
+              Technology
+            </p>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400">
+              Certifications
+            </h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Nvidia Fundamentals of Deep Learning, DeepLearning.ai Deep
+              Learning Specialization, Machine Learning Specialization, Google's
+              Agile Project Management, Google UX Design Specialization, Google
+              Fundamentals of Digital Marketing
+            </p>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400">
+              Projects
+            </h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Internship at the Port of Algiers: Design and Production of a
+              Mobile and Web application for container management (May - June
+              2023)
+            </p>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Academic Projects: Tweet Classifier in the Context of Sentiment
+              Analysis, Deep Neural Network for Image Classification, Solving
+              the Travelling Salesman Problem Using Heuristics and
+              Metaheuristics, Solving the Multiple Knapsack Problem Using
+              Heuristics and Metaheuristics, Management system for a dairy
+              production and sales company, Multi-agents auction system
+            </p>
+          </div>
+        </section>
+        <section className="py-10">
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400">
+              Portfolio
+            </h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+              Here are some of the projects I've worked on.
+            </p>
+          </div>
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={Bookstore}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={FinanceManagement}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={ImageGen}
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+                layout="responsive"
+                src={RecipeWebsite}
+              />
+            </div>
+          </div>
+        </section>
+        <section className="py-10">
+          <div>
+            <h3 className="text-3xl py-1 text-gray-800 dark:text-gray-200 flex justify-center">
+              Contact
+            </h3>
+            <div className="flex justify-center">
+              <Contact />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
