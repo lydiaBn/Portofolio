@@ -2,11 +2,12 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 
-const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const publickeyID = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const publickeyID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
+  console.log(process.env);
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
@@ -22,25 +23,26 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log("Service ID:", process.env.REACT_APP_EMAILJS_SERVICE_ID);
+    console.log("Template ID:", process.env.REACT_APP_EMAILJS_TEMPLATE_ID);
+    console.log("Public Key ID:", process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
-    emailjs
-      .sendForm("serviceID", "templateID", form.current, "publickeyID")
-      .then(
-        (result) => {
-          console.log(result.text);
-          setShowMessage(true); // Show the success message
-          // Clear the form after submission
-          setFormData({ user_name: "", user_email: "", message: "" });
+    emailjs.sendForm(serviceID, templateID, form.current, publickeyID).then(
+      (result) => {
+        console.log(result.text);
+        setShowMessage(true); // Show the success message
+        // Clear the form after submission
+        setFormData({ user_name: "", user_email: "", message: "" });
 
-          // Hide the success message after 3 seconds
-          setTimeout(() => {
-            setShowMessage(false);
-          }, 3000);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+        // Hide the success message after 3 seconds
+        setTimeout(() => {
+          setShowMessage(false);
+        }, 3000);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
