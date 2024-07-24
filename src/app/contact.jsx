@@ -105,6 +105,7 @@ const StyledContactForm = styled.div`
 
     input {
       height: 35px;
+      color: black; /* Text color for light mode */
 
       &:focus {
         border: 2px solid rgba(0, 206, 158, 1);
