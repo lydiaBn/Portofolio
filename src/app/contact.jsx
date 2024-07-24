@@ -2,6 +2,10 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 
+const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const publickeyID = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
@@ -20,12 +24,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(
-        "service_vozzavn",
-        "template_zv9vnv6",
-        form.current,
-        "P2LQceDaXzq0ZXyPo"
-      )
+      .sendForm("serviceID", "templateID", form.current, "publickeyID")
       .then(
         (result) => {
           console.log(result.text);
