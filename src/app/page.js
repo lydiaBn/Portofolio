@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className={darkMode ? "dark" : ""}>
       <Head>
-        <title>Lydia Benzemrane's Portfolio</title>
+        <title>Lydia Benzemrane&apos;s Portfolio</title>
         <meta
           name="description"
           content="Portfolio of Lydia Benzemrane, a Master's student in Intelligent Computer Systems."
@@ -64,10 +64,10 @@ export default function Home() {
               Full Stack Developer and UI/UX Designer
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Hi there! I’m Lydia, a passionate Master's student in AI and Data
-              Science with a love for software engineering and UI/UX design. I
-              enjoy crafting intuitive and engaging digital experiences and am
-              fluent in English, French, and Arabic.
+              Hi there! I&apos;m Lydia, a passionate Master&apos;s student in AI
+              and Data Science with a love for software engineering and UI/UX
+              design. I enjoy crafting intuitive and engaging digital
+              experiences and am fluent in English, French, and Arabic.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-2 text-gray-600 dark:text-gray-400">
               <a href="https://www.linkedin.com/in/lydia-benzemrane-594183219/">
@@ -75,7 +75,12 @@ export default function Home() {
               </a>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt- md:h-96 md:w-96">
-              <Image src={lydiaAvatar} layout="fill" objectFit="cover" />
+              <Image
+                src={lydiaAvatar}
+                layout="fill"
+                objectFit="cover"
+                alt="Lydia Benzemrane Avatar"
+              />
             </div>
           </div>
         </section>
@@ -100,13 +105,13 @@ export default function Home() {
               Education
             </h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Master's in Intelligent Computer Systems (2023 - present), Houari
-              Boumediene University of Science and Technology
+              Master&apos;s in Intelligent Computer Systems (2023 - present),
+              Houari Boumediene University of Science and Technology
             </p>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Bachelor's Degree in Computer Systems and Software Engineering
-              (2020 - 2023), Houari Boumediene University of Science and
-              Technology
+              Bachelor&apos;s Degree in Computer Systems and Software
+              Engineering (2020 - 2023), Houari Boumediene University of Science
+              and Technology
             </p>
           </div>
         </section>
@@ -117,9 +122,9 @@ export default function Home() {
             </h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               Nvidia Fundamentals of Deep Learning, DeepLearning.ai Deep
-              Learning Specialization, Machine Learning Specialization, Google's
-              Agile Project Management, Google UX Design Specialization, Google
-              Fundamentals of Digital Marketing
+              Learning Specialization, Machine Learning Specialization,
+              Google&apos;s Agile Project Management, Google UX Design
+              Specialization, Google Fundamentals of Digital Marketing
             </p>
           </div>
         </section>
@@ -149,44 +154,48 @@ export default function Home() {
               Portfolio
             </h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Here are some of the projects I've worked on.
+              Here are some of the projects I&apos;ve worked on.
             </p>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={500}
+                height={300}
                 layout="responsive"
                 src={Bookstore}
+                alt="Bookstore Project"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={500}
+                height={300}
                 layout="responsive"
                 src={FinanceManagement}
+                alt="Finance Management Project"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={500}
+                height={300}
                 layout="responsive"
                 src={ImageGen}
+                alt="Image Generation Project"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={500}
+                height={300}
                 layout="responsive"
                 src={RecipeWebsite}
+                alt="Recipe Website Project"
               />
             </div>
           </div>
