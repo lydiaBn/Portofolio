@@ -7,7 +7,6 @@ const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const publickeyID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
-  console.log(process.env);
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
@@ -26,9 +25,7 @@ const Contact = () => {
 
     emailjs.sendForm(serviceID, templateID, form.current, publickeyID).then(
       (result) => {
-        console.log(result.text);
         setShowMessage(true); // Show the success message
-        // Clear the form after submission
         setFormData({ user_name: "", user_email: "", message: "" });
 
         // Hide the success message after 3 seconds
@@ -44,32 +41,37 @@ const Contact = () => {
 
   return (
     <StyledContactForm>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input
-          type="text"
-          name="user_name"
-          value={formData.user_name}
-          onChange={handleInputChange}
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          name="user_email"
-          value={formData.user_email}
-          onChange={handleInputChange}
-        />
-        <label>Message</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleInputChange}
-        />
-        <input type="submit" value="Send" />
-      </form>
-      {showMessage && (
-        <SuccessMessage>Message sent successfully!</SuccessMessage>
-      )}
+      <div className="form-container">
+        <form ref={form} onSubmit={sendEmail}>
+          <label>Name</label>
+          <input
+            type="text"
+            name="user_name"
+            value={formData.user_name}
+            onChange={handleInputChange}
+            className="dark:bg-gray-800 dark:text-white"
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            name="user_email"
+            value={formData.user_email}
+            onChange={handleInputChange}
+            className="dark:bg-gray-800 dark:text-white"
+          />
+          <label>Message</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+            className="dark:bg-gray-800 dark:text-white"
+          />
+          <input type="submit" value="Send" />
+        </form>
+        {showMessage && (
+          <SuccessMessage>Message sent successfully!</SuccessMessage>
+        )}
+      </div>
     </StyledContactForm>
   );
 };
@@ -78,11 +80,19 @@ export default Contact;
 
 // Styles
 const StyledContactForm = styled.div`
-  width: 400px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 300px; /* Ensure the container has enough height */
+
+  .form-container {
+    width: 100%;
+    max-width: 600px; /* Set a max-width for the form */
+    padding: 20px;
+  }
 
   form {
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
     width: 100%;
     font-size: 16px;
@@ -90,7 +100,8 @@ const StyledContactForm = styled.div`
     input,
     textarea {
       width: 100%;
-      padding: 7px;
+      padding: 10px;
+      margin-top: 5px;
       outline: none;
       border-radius: 5px;
       border: 1px solid rgb(220, 220, 220);
@@ -101,22 +112,13 @@ const StyledContactForm = styled.div`
     }
 
     input {
-      height: 35px;
+      height: 40px;
       color: black; /* Text color for light mode */
-
-      &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
-      }
     }
 
     textarea {
-      max-height: 100px;
-      min-height: 100px;
+      min-height: 120px;
       color: black; /* Text color for light mode */
-
-      &:focus {
-        border: 2px solid rgba(0, 206, 158, 1);
-      }
     }
 
     label {
@@ -140,6 +142,9 @@ const StyledContactForm = styled.div`
       );
       color: white;
       border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
     }
   }
 `;
