@@ -36,6 +36,16 @@ import BookStore4 from "/public/Projects_Images/BookStore/04.png";
 import BookStore5 from "/public/Projects_Images/BookStore/05.png";
 import RecipeWebsite1 from "/public/Projects_Images/RecipeWebsite/00.png";
 import RecipeWebsite2 from "/public/Projects_Images/RecipeWebsite/01.png";
+import RE0 from "/public/Projects_Images/real-estate-app/00.png";
+import RE1 from "/public/Projects_Images/real-estate-app/01.png";
+import RE2 from "/public/Projects_Images/real-estate-app/02.png";
+import RE4 from "/public/Projects_Images/real-estate-app/04.png";
+import RE5 from "/public/Projects_Images/real-estate-app/05.png";
+import RE6 from "/public/Projects_Images/real-estate-app/06.png";
+import RE7 from "/public/Projects_Images/real-estate-app/07.png";
+import RE8 from "/public/Projects_Images/real-estate-app/08.png";
+import RE9 from "/public/Projects_Images/real-estate-app/09.png";
+import RE10 from "/public/Projects_Images/real-estate-app/10.png";
 
 import lydiaAvatar from "/public/lydiaAvatar.png";
 import Contact from "./contact";
@@ -69,10 +79,20 @@ export default function Home() {
         BlushBloom19,
         BlushBloom20,
       ],
-      title: "Beauty Ecommerce Website",
-      description: "A full-featured e-commerce website for a beauty store.",
+      title: "Beauty E-commerce Website",
+      description:
+        "Designed and developed a comprehensive e-commerce platform for beauty products. Features include advanced filtering by brand, price, and category, along with a seamless ordering and checkout process that accurately calculates delivery options and prices. The website allows users to favorite products, leave comments, and rate items. An extensive admin dashboard provides insights with graphs on monthly sales, customer counts, and order tracking. Additional functionalities include product and user management, a contact page for direct email inquiries, and a frequently asked questions (FAQ) section.",
       stack: ["React", "Node.js", "MongoDB", "Express"],
       githubLink: "https://github.com/lydiaBn/BlushBloom",
+      //demoLink: "https://bookstore-demo.com",
+    },
+    {
+      images: [RE0, RE1, RE2, RE4, RE5, RE6, RE7, RE8, RE9, RE10],
+      title: "Full Stack Real Estate App",
+      description:
+        "Developed a fully-featured real estate website using the MERN stack. Implemented search and filtering functionalities, real-time messaging for user communication, and an interactive map for property listings. The responsive design ensures optimal user experience across devices, while a working contact form enables direct email inquiries.",
+      stack: ["React", "Node.js", "MongoDB", "Express"],
+      githubLink: "https://github.com/lydiaBn/Real-Estate-App",
       //demoLink: "https://bookstore-demo.com",
     },
     {
@@ -84,8 +104,9 @@ export default function Home() {
         BookStore4,
         BookStore5,
       ],
-      title: "Bookstore",
-      description: "Bookstore website with a collection of books Read.",
+      title: "Full-Stack MERN Bookstore",
+      description:
+        "Developed a full-stack bookstore application using the MERN stack, allowing users to add books, view their book list in two formats, and modify or delete entries. The application features a user-friendly interface for managing personal book collections, ensuring a seamless experience for users to organize their reading lists.",
       stack: ["React", "Node.js", "MongoDB", "Express"],
       githubLink: "https://github.com/lydiaBn/Mern-Bookstore-app",
       //  demoLink: "https://image-generator-demo.com",
@@ -94,7 +115,8 @@ export default function Home() {
     {
       images: [RecipeWebsite1, RecipeWebsite2],
       title: "Recipe Website",
-      description: "A website for finding and sharing recipes.",
+      description:
+        "Created a front-end recipe website using React that leverages TheMealDB API to display recipes with detailed cooking instructions and links to original posts. The application includes a favorite bar, a search feature, and a button for users to discover random recipes, enhancing user engagement and experience.",
       stack: ["React"],
       githubLink: "https://github.com/lydiaBn/Recipe-website-React",
       demoLink: "https://recipe-website-react-delta.vercel.app/",
@@ -102,7 +124,8 @@ export default function Home() {
     {
       images: [FinanceManagement1, FinanceManagement2, FinanceManagement3],
       title: "Finance Management",
-      description: "A web app for managing personal finances.",
+      description:
+        "Created a web app for tracking personal finances using Clerk for authentication. Users can log purchases with details like description, amount, and category, while a summary table displays total monthly spending for easy financial oversight.",
       stack: ["React", "Node.js", "MongoDB", "Express"],
       githubLink: "https://github.com/lydiaBn/PersonnelFinanceManagement",
       //  demoLink: "https://finance-management-demo.com",
@@ -224,20 +247,29 @@ export default function Home() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="lg:flex lg:items-center lg:w-full lg:justify-between"
+                className={`lg:flex lg:items-center lg:w-full lg:justify-between ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 <div className="lg:w-1/2 lg:pr-10">
                   <ProjectCarousel images={project.images} />
                 </div>
-                <div className="lg:w-1/2 lg:pl-10">
-                  <h4 className="text-2xl text-teal-600 dark:text-teal-400">
+                <div className="lg:w-1/2 lg:pl-10 lg:pr-11 sm:mt-10">
+                  <h4 className="text-2xl text-teal-600 dark:text-teal-400 mb-4 font-bold">
                     {project.title}
                   </h4>
                   <p className="text-lg text-gray-800 dark:text-gray-200">
                     {project.description}
                   </p>
-                  <p className="text-lg text-gray-800 dark:text-gray-200">
-                    Stack: {project.stack.join(", ")}
+                  <p className="text-lg text-gray-800 dark:text-gray-200 mt-3">
+                    <span className=" text-teal-600 dark:text-teal-400 font-bold">
+                      {" "}
+                      Stack:{" "}
+                    </span>
+                    <span className="  text-[#FFB200] dark:text-[#FFEB00]">
+                      {" "}
+                      {project.stack.join(", ")}
+                    </span>
                   </p>
                   <div className="flex mt-2">
                     <a

@@ -61,6 +61,7 @@ const ProjectCarousel = ({ images }) => {
             </div>
           ))}
         </div>
+        {/* Navigation buttons for small carousel */}
         <button
           onClick={prevImage}
           className="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 text-white bg-teal-600 bg-opacity-70 p-2 rounded-full z-10"
@@ -78,9 +79,10 @@ const ProjectCarousel = ({ images }) => {
       {isPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
           <div className="relative w-11/12 max-w-9xl h-auto border-4 border-teal-500 rounded-lg">
+            {/* Exit button positioned outside the popup */}
             <button
               onClick={togglePopup}
-              className="absolute top-2 right-2 text-2xl z-10 text-white bg-teal-500 rounded-2xl p-2"
+              className="absolute top-2 right-2 text-2xl z-10 text-white bg-teal-500 rounded-full p-2"
             >
               <FaTimes />
             </button>
@@ -93,6 +95,19 @@ const ProjectCarousel = ({ images }) => {
               objectFit="cover"
               className="rounded-lg"
             />
+            {/* Navigation buttons for large carousel */}
+            <button
+              onClick={prevImage}
+              className="absolute top-1/2 left-[-3rem] transform -translate-y-1/2 text-white bg-teal-600 bg-opacity-70 p-2 rounded-full z-10"
+            >
+              &#8249;
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute top-1/2 right-[-3rem] transform -translate-y-1/2 text-white bg-teal-600 bg-opacity-70 p-2 rounded-full z-10"
+            >
+              &#8250;
+            </button>
           </div>
         </div>
       )}
